@@ -1,0 +1,10 @@
+; $Id$
+ 
+name = TK2017
+description = Overzicht aanmeldingen TK2017 campagne
+package = sprbs
+core = 7.x
+
+dependencies[] = civicrm
+
+files[] = TK2017teller.module

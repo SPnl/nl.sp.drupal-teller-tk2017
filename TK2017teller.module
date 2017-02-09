@@ -1,0 +1,50 @@
+<?php
+
+function TK2017teller_menu() {
+  // load the config file
+  $configString = file_get_contents(__DIR__ . "/config.json");
+  $config = json_decode($configString);
+
+	$items = array();
+
+	$items[$config->overviewPageURL] = array(
+		'title' => $config->overviewPageTitle,
+		'page callback' => 'TK2017teller_overzicht_page',
+		'access callback' => 'user_is_logged_in',
+		'description' => $config->overviewPageTitle,
+		'type' => MENU_CALLBACK,
+	);
+
+  $items[$config->detailPageURL] = array(
+    'title' => $config->detailPageTitle,
+    'page callback' => 'TK2017teller_detail_page',
+    'access callback' => 'user_is_logged_in',
+    'description' => $config->detailPageTitle,
+    'type' => MENU_CALLBACK,
+  );
+
+	return $items;
+}
+
+function TK2017teller_overzicht_page() {
+  include_once DRUPAL_ROOT . '/sites/default/modules/custom/nl.sp.drupal-tellerlib/tellerlib-overzicht.inc';
+
+  // load the config file
+  $configString = file_get_contents(__DIR__ . "/config.json");
+  $config = json_decode($configString);
+
+  return tellerlib_overzicht($config);
+}
+
+function TK2017teller_detail_page() {
+  include_once DRUPAL_ROOT . '/sites/default/modules/custom/nl.sp.drupal-tellerlib/tellerlib-detail.inc';
+
+  // load the config file
+  $configString = file_get_contents(__DIR__ . "/config.json");
+  $config = json_decode($configString);
+
+  // load the help
+  module_load_include('inc', 'nl.sp.drupal-tellerlib', 'tellerlib-detail');
+
+  return tellerlib_detail($config);
+}
