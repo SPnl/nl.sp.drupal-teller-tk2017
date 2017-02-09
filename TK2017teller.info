@@ -5,6 +5,6 @@ description = Overzicht aanmeldingen TK2017 campagne
 package = sprbs
 core = 7.x
 
-dependencies[] = civicrm
+dependencies[] = tellerlib
 
 files[] = TK2017teller.module
