@@ -1,7 +1,6 @@
 {
   "name": "SPnl/nl.sp.drupal-teller-tk2017",
   "description": "Overzicht aanmeldingen TK2017 campagne",
-  "version": "1.0.0",
   "type": "drupal-module",
   "authors": [
     {
