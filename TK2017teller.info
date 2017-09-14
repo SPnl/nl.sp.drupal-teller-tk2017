@@ -3,6 +3,7 @@
 name = TK2017
 description = Overzicht aanmeldingen TK2017 campagne
 package = sprbs
+version = 1.0.1
 core = 7.x
 
 dependencies[] = tellerlib

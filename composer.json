@@ -1,7 +1,7 @@
 {
-  "name": "SPnl/nl.sp.drupal-teller-tk2017",
+  "name": "spnl/nl.sp.drupal-teller-tk2017",
   "description": "Overzicht aanmeldingen TK2017 campagne",
-  "type": "drupal-module",
+  "type": "drupal-custom-module",
   "authors": [
     {
       "name": "Alain Benbassat",
